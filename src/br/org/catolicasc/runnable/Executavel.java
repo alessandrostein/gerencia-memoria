@@ -104,13 +104,13 @@ public class Executavel {
 		Executavel exec = new Executavel();
 		exec.run();
 		
-		System.out.println("First Fit");
-		FirstFit firstFit = new FirstFit(exec.blocos, exec.processos);
-		System.out.println("");
-		
-		//System.out.println("Worst Fit");
-		//WorstFit worstFit = new WorstFit(blocos, processos);
+		//System.out.println("First Fit");
+		//FirstFit firstFit = new FirstFit(exec.blocos, exec.processos);
 		//System.out.println("");
+		
+		System.out.println("Worst Fit");
+		WorstFit worstFit = new WorstFit(blocos, processos);
+		System.out.println("");
 		
 
 	}

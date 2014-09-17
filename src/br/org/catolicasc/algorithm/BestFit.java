@@ -10,7 +10,5 @@ public class BestFit {
 	
 	public BestFit(List<Bloco> blocos, List<Processo> processos) {
 	  // Aloca o menor
-	}
-		
-	
+	}	
 }
