@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import br.org.catolicasc.algorithm.NextFit;
+import br.org.catolicasc.algorithm.BestFit;
 import br.org.catolicasc.dao.BlocoDao;
 import br.org.catolicasc.dao.ProcessoDao;
 import br.org.catolicasc.model.Bloco;
@@ -110,9 +110,14 @@ public class Executavel {
 		//WorstFit worstFit = new WorstFit(blocos, processos);
 		//System.out.println("");
 		
-		System.out.println("Next Fit");
-		NextFit nextfit = new NextFit(blocos, processos);
+		//System.out.println("Next Fit");
+		//NextFit nextfit = new NextFit(blocos, processos);
+		//System.out.println("");
+		
+		System.out.println("Best Fit");
+		BestFit nextfit = new BestFit(blocos, processos);
 		System.out.println("");
+		
 		
 
 	}
