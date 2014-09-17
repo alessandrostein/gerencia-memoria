@@ -8,19 +8,21 @@ import br.org.catolicasc.model.Processo;
 public class NextFit {
 	
 	public NextFit(List<Bloco> blocos, List<Processo> processos) {
-				
+		
+		int numeroLastIndice = 0;
+		
 		for (Processo processo : processos) {
 			
-			for (int numeroLastIndice = 0; numeroLastIndice < blocos.size(); numeroLastIndice++) {
+			for (int i = numeroLastIndice; i < blocos.size(); i++) {
 
-				if ((blocos.get(numeroLastIndice).getTamanho() >= processo.getTamanho()) && (blocos.get(numeroLastIndice).getLivre())) {
+				if ((blocos.get(i).getTamanho() > processo.getTamanho()) && (blocos.get(i).getLivre())) {
 
 					System.out.println("Alocado processo " + processo.getId() + "(" + processo.getTamanho() + "k) " 
-							+ " para o bloco " + blocos.get(numeroLastIndice).getId() + "(" + blocos.get(numeroLastIndice).getTamanho() + "k)");
+							+ " para o bloco " + blocos.get(i).getId() + "(" + blocos.get(i).getTamanho() + "k)");
 					
-					blocos.get(numeroLastIndice).setTamanho(blocos.get(numeroLastIndice).getTamanho() - processo.getTamanho());
-					blocos.get(numeroLastIndice).setLivre(false);
-					
+					blocos.get(i).setTamanho(blocos.get(i).getTamanho() - processo.getTamanho());
+					blocos.get(i).setLivre(false);
+					numeroLastIndice = i;
 					break;
 				} else {
 					
