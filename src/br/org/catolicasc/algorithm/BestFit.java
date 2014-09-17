@@ -8,19 +8,29 @@ import br.org.catolicasc.model.Processo;
 public class BestFit {
 
 	public BestFit(List<Bloco> blocos, List<Processo> processos) {
-		
+
 		int indexMenorBloco = 0;
+		boolean first;
 		for (Processo processo : processos) {
 			System.out.println("Processo " + processo.getId()
 					+ " com tamanho de " + processo.getTamanho());
 
+			first = true;
 			for (Bloco bloco : blocos) {
-				if ((bloco.getTamanho() <= blocos.get(indexMenorBloco)
-						.getTamanho()) && (bloco.getLivre()) ) {
-					indexMenorBloco = bloco.getId();
-					System.out.println("Menor bloco é o " + bloco.getId()
-							+ " com o tamanho de " + bloco.getTamanho());
+
+				if (bloco.getLivre()) {
+
+					if (first) {
+						indexMenorBloco = bloco.getId();
+						first = false;
+					}
+
+					if (bloco.getTamanho() <= blocos.get(indexMenorBloco)
+							.getTamanho()) {
+						indexMenorBloco = bloco.getId();
+					}
 				}
+
 			}
 
 			if ((blocos.get(indexMenorBloco).getTamanho() >= processo
