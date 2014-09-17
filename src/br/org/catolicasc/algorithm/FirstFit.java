@@ -12,17 +12,18 @@ public class FirstFit {
 
 			for (Bloco bloco : blocos) {
 
-				if (bloco.getTamanho() >= processo.getTamanho()) {
+				if ((bloco.getTamanho() >= processo.getTamanho()) && (bloco.getLivre())) {
 
 					System.out.println("Alocado processo " + processo.getId() + "(" + processo.getTamanho() + "k) " 
 							+ " para o bloco " + bloco.getId() + "(" + bloco.getTamanho() + "k)");
 					
 					bloco.setTamanho(bloco.getTamanho() - processo.getTamanho());
+					bloco.setLivre(false);
 					
 					break;
 				} else {
 					
-					System.out.println("N„o h· mais memÛria suficiente");
+					System.out.println("N√£o h√° mais mem√≥ria suficiente ou o bloco ja esta ocupado por outro processo.");
 					System.out.println("Processo: " + processo.getId() + " Tamanho: " + processo.getTamanho());
 					System.out.println("Bloco: " + bloco.getId() + " Tamanho: " + bloco.getTamanho());					
 				}

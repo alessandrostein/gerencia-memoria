@@ -23,12 +23,12 @@ public class Executavel {
 	private static List<Processo> processos = new ArrayList<Processo>();
 
 	public void menuProcesso() {
-		System.out.println("Informe o número de processos:");
+		System.out.println("Informe o nÃºmero de processos:");
 		numProcessos = input.nextInt();
 	}
 
 	public void menuBloco() {
-		System.out.println("Informe o número de blocos:");
+		System.out.println("Informe o nÃºmero de blocos:");
 		numBlocos = input.nextInt();
 	}
 
@@ -78,7 +78,8 @@ public class Executavel {
 			Bloco bloco = new Bloco();
 			bloco.setId(i);
 			bloco.setTamanho(getBlocoTamanho(bloco));
-
+			bloco.setLivre(true);
+					
 			BlocoDao blocoDao = new BlocoDao();
 			blocoDao.criarBloco(bloco);
 
