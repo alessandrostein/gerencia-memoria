@@ -20,13 +20,13 @@ public class BestFit {
 
 				if (bloco.getLivre()) {
 
-					if (first) {
+					if ((first) && (bloco.getTamanho() >= processo.getTamanho())) {
 						indexMenorBloco = bloco.getId();
 						first = false;
 					}
 
-					if (bloco.getTamanho() <= blocos.get(indexMenorBloco)
-							.getTamanho()) {
+					if ((bloco.getTamanho() <= blocos.get(indexMenorBloco)
+							.getTamanho()) && (bloco.getTamanho() >= processo.getTamanho())) {
 						indexMenorBloco = bloco.getId();
 					}
 				}
